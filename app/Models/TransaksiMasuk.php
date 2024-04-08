@@ -16,6 +16,6 @@ class TransaksiMasuk extends Model
     ];
 
     public function produk(){
-        return $this->belongsTo(Produk::class,'id','produk_id');
+        return $this->belongsTo(Produk::class,'produk_id','id');
     }
 }

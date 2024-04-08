@@ -47,6 +47,8 @@ Route::middleware('auth')
     ->name('transaksi_masuk.')
     ->controller(TransaksiMasukController::class)
     ->group(function(){
+        Route::get('show','show')->name('show');
+        Route::get('show_overview','showOverview')->name('show_overview');
         Route::post('create','createTransaksi')->name('create');
     });
 
