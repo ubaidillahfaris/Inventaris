@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transaksi_keluars', function (Blueprint $table) {
+        Schema::create('stok_opnames', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('produk_id');
-            $table->decimal('jumlah',15,2)->default(0);
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -25,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('transaksi_keluars');
+        Schema::dropIfExists('stok_opnames');
     }
 };

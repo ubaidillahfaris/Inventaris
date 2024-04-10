@@ -84,6 +84,9 @@ class TransaksiMasukController extends Controller
                 'exp_date' => $request->exp_date
             ]);
 
+            $stok = new StokController();
+            $stok->stock_add($request->produk_id,$request->jumlah);
+
             // pendataan tempat penyimpanan
             if (isset($request->label_rak)) {
                 $storageLocationController = new StorageLocationController();

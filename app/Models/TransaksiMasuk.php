@@ -18,4 +18,9 @@ class TransaksiMasuk extends Model
     public function produk(){
         return $this->belongsTo(Produk::class,'produk_id','id');
     }
+
+    public function lokasi(){
+        return $this->hasMany(StorageLocation::class,'transaksi_masuk_id','id');
+    }
 }
+

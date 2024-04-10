@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransaksiKeluarController;
 use App\Http\Controllers\TransaksiMasukController;
 use App\Models\TransaksiMasuk;
 use Illuminate\Foundation\Application;
@@ -50,6 +51,13 @@ Route::middleware('auth')
         Route::get('show','show')->name('show');
         Route::get('show_overview','showOverview')->name('show_overview');
         Route::post('create','createTransaksi')->name('create');
+    });
+
+    ROute::prefix('transaksi_keluar')
+    ->name('transaksi_keluar.')
+    ->controller(TransaksiKeluarController::class)
+    ->group(function(){
+        Route::post('create','create')->name('create');
     });
 
 });

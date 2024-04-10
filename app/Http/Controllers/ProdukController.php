@@ -13,6 +13,11 @@ use Ramsey\Uuid\Uuid;
 class ProdukController extends Controller
 {
 
+    public function show($id){
+        $produk = Produk::find($id);
+        return $produk;
+    }
+
     public function createProduk(Request $request){
 
         try {
