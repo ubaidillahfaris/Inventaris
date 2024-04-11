@@ -13,7 +13,16 @@ return new class extends Migration
     {
         Schema::create('stok_opnames', function (Blueprint $table) {
             $table->id();
+            $table->date('periode_start');
+            $table->date('periode_end');
+            $table->unsignedBigInteger('produk_id');
+            $table->bigInteger('stok_awal');
+            $table->bigInteger('stok_fisik');
+            $table->bigInteger('stok_akhir');
+            $table->bigInteger('selisih');
+            $table->text('keterangan')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

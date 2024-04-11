@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class StokOpname extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'produk_id',
+        'periode_start',
+        'periode_end',
+        'stok_awal',
+        'stok_fisik',
+        'stok_akhir',
+        'keterangan',
+        'selisih'
+    ];
 }

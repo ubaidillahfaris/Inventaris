@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 
 class StokController extends Controller
 {
+
+    public function stok_update(int $produk_id, int $stok){
+        try {
+            Stok::where('produk_id',$produk_id)
+            ->update([
+                'jumlah' => $stok
+            ]);
+            
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+
     public function stock_add(int $produk_id, int $jumlah):void{
         try {
             $stok = Stok::where('produk_id',$produk_id)->first();
