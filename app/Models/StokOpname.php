@@ -19,4 +19,8 @@ class StokOpname extends Model
         'keterangan',
         'selisih'
     ];
+
+    public function produk(){
+        return $this->hasOne(Produk::class,'id','produk_id');
+    }
 }

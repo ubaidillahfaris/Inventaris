@@ -65,7 +65,8 @@ Route::middleware('auth')
     ->name('stok_opname.')
     ->controller(StokOpnameController::class)
     ->group(function(){
-        Route::post('create','create')->name('create');
+        Route::post('create_opname_per_produk','createOpnamePerProduk')->name('createOpnamePerProduk');
+        Route::post('create_opname_all_produk','createOpnameAllProduk')->name('createOpnameAllProduk');
     });
 
 });

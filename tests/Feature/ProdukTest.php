@@ -16,8 +16,8 @@ class ProdukTest extends TestCase
     {
         $user = User::first();
         $response = $this->actingAs($user)->post(route('produk.create'),[
-            'name' => 'Produk 1',
-            'reg' => 'Reg 1',
+            'name' => 'Produk 2',
+            'reg' => 'Reg 2',
             'satuan' => 'Box'
         ]);
         $response->assertStatus(200);

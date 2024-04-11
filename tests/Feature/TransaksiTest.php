@@ -16,7 +16,7 @@ class TransaksiTest extends TestCase
     public function test_transaksi_masuk(): void
     {
         $user = User::first();
-        $produk = Produk::first();
+        $produk = Produk::find(2);
         $response = $this->actingAs($user)->post(route('transaksi_masuk.create'),[
             'produk_id' => $produk->id,
             'jumlah' => 10,
